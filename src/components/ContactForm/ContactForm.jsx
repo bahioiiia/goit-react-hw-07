@@ -11,14 +11,7 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(
-      addContact({
-        id: nanoid(),
-        name: values.name,
-        number: values.number,
-      })
-    );
-
+    dispatch(addContact(values));
     actions.resetForm();
   };
 
@@ -29,11 +22,11 @@ export default function ContactForm() {
     .required("Required"),
   number: Yup.string()
     .matches(
-      /^\d{3}-\d{2}-\d{2}$/,
-      "Please enter phone number as ***-**-**"
+      /^\d{3}-\d{3}-\d{4}$/,
+      "Please enter phone number as ***-***-****"
     )
-    .min(9, "Too Short!")
-    .max(9, "Too Long!")
+    .min(12, "Too Short!")
+    .max(12, "Too Long!")
     .required("Required"),
   });
   

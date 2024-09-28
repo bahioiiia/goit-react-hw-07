@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchContact } from "../../redux/contactsOps";
 import { selectIsLoading, selectError } from "../../redux/contactsSlice";
+import Loader from "../Loader/Loader";
 
 export default function App() {
 //
@@ -23,7 +24,7 @@ export default function App() {
     <section className={css.container}>
       <h1>Phonebook</h1>
       <ContactForm />
-      {isLoading && !error && <p>Loading...</p>}
+      {isLoading && !error && <Loader />}
       <SearchBox />
       <ContactList />
     </section>
