@@ -1,8 +1,7 @@
-import { IoPerson, IoCallSharp } from "react-icons/io5";
 import css from "./Contact.module.css";
+import { IoPerson, IoCallSharp } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 //import { deleteContact } from "../../redux/contactsSlice";
-
 import { deleteContact } from "../../redux/contactsOps";
 
 export default function Contact({ contact }) {

@@ -52,15 +52,6 @@ const slice = createSlice({
         state.error = action.payload;
       });
   },
-
-  // reducers: {
-  //   addContact: (state, action) => {
-  //     state.items.push(action.payload);
-  //   },
-  //   deleteContact: (state, action) => {
-  //     state.items = state.items.filter((item) => item.id !== action.payload);
-  //   },
-  // },
 });
 
 export const selectIsLoading = (state) => state.contacts.loading;
